@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="container-fluid">
+      <form (ngSubmit)="seleccionar()">
+        <label for="exampleSelect1" class="form-label mt-3">Seleccione Album</label>
+        <select class="form-select" name="album" [(ngModel)]="albumSeleccionado">
+          <option *ngFor="let titulo of listadoAlbums" [value]="titulo.id">{{titulo.title._content}}</option>
+        </select>
+        <p></p>
+        <button type="submit" class="btn btn-outline-info">Buscar</button>
+      </form>
+      <a class="navbar-brand">Flickgular</a> 
+    </div>
+    
+  </nav>
+  <app-gallery [listadoFotos]="listaFotos"></app-gallery>
